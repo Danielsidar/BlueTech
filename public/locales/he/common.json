@@ -12,8 +12,8 @@
     "community": "קהילה",
     "knowledge": "מרכז ידע",
     "profile": "החשבון שלי",
-    "logout": "התנתקות",
-    "catalog": "קטלוג קורסים"
+    "catalog": "קטלוג קורסים",
+    "logout": "התנתקות"
   },
   "agents": {
     "title": "עוזרים דיגיטליים 🤖",
@@ -21,6 +21,7 @@
     "filter_home": "לבית",
     "filter_business": "לעסק",
     "open_tool": "פתח כלי",
+    "more_details": "לפרטים נוספים",
     "buy_now": "קנה ב-₪{{price}}",
     "free": "חינם",
     "home_title": "סוכנים לבית",
@@ -45,18 +46,27 @@
       "completed_label": "הושלם"
     }
   },
-  "courses": {
+  "app_courses": {
     "title": "הקורסים שלי 📚",
+    "subtitle": "המשך בדיוק מאיפה שהפסקת",
     "buttons": {
       "buy_now": "קנה עכשיו",
       "start": "התחל ללמוד",
       "continue": "המשך ללמוד"
     }
   },
+  "catalog": {
+    "title": "קטלוג קורסים",
+    "subtitle": "כל הידע שאתה צריך כדי להוביל ב-AI",
+    "purchased": "כבר רכשת את הקורס",
+    "start_learning": "התחל ללמוד",
+    "buy_now": "לרכישה"
+  },
   "classroom": {
     "active_lesson": "שיעור פעיל",
     "ai_tool": "ממשק עבודה חכם",
     "completed": "הושלמו",
+    "welcome_back": "ברוך השב,",
     "video_lesson": "שיעור וידאו",
     "quiz_title": "מבחן סיום שיעור 📝",
     "quiz_button": "התחל מבחן שיעור",
@@ -65,9 +75,7 @@
       "צפייה בכל סרטון השיעור בעיון",
       "הורדת חומרי העזר"
     ],
-    "finish_button": "סיימתי את השיעור",
-    "lessons": "שיעורים",
-    "quiz_required_hint": "עליך לעבור את המבחן בציון 80 לפחות כדי לסיים את השיעור"
+    "finish_button": "סיימתי את השיעור"
   },
   "purchase": {
     "back_to_catalog": "חזרה לקטלוג",
@@ -120,15 +128,9 @@
       "free": "חינם",
       "cta": "הרשמה מיידית",
       "cta_locked": "נדרש מעבר מבחן",
-      "locked_hint": "עבור את מבחן הקבלה כדי לפתוח את ההרשמה"
+      "locked_hint": "עבור את מבחן הקבלה כדי לפתוח את ההרשמה",
+      "lifetime_access": "גישה לכל החיים • תמיכה מקצועית • עדכונים שוטפים"
     }
-  },
-  "catalog": {
-    "title": "קטלוג קורסים",
-    "subtitle": "כל הידע שאתה צריך כדי להוביל ב-AI",
-    "purchased": "כבר רכשת",
-    "start_learning": "התחל ללמוד",
-    "buy_now": "לרכישה"
   },
   "knowledge": {
     "title": "מרכז הידע",
@@ -178,7 +180,8 @@
     "my_certificates": "התעודות שלי",
     "cert_title": "תעודת סיום - מומחה AI",
     "cert_date": "הוענק ב-{{date}}",
-    "download_cert": "הורד תעודה (PDF)"
+    "download_cert": "הורד תעודה (PDF)",
+    "no_certificates": "עדיין אין תעודות להצגה"
   },
   "community": {
     "title": "קהילת BlueTech",
@@ -261,32 +264,67 @@
     "invalid_login": "אימייל או סיסמה שגויים",
     "password_hint": "לפחות 6 תווים"
   },
+  "common": {
+    "cancel": "ביטול",
+    "save": "שמירת שינויים",
+    "loading": "טוען..."
+  },
   "admin": {
+    "console_title": "ממשק ניהול",
+    "dashboard": "לוח בקרה",
+    "system_active": "מערכת פעילה",
+    "back_to_system": "בחזרה למערכת",
     "menu": {
       "courses": "ניהול קורסים",
       "agents": "ניהול סוכנים",
-      "users": "ניהול משתמשים",
-      "sales": "סקירת מכירות"
+      "users": "ניהול משתמשים"
+    },
+    "agents": {
+      "title": "ניהול סוכנים 🤖",
+      "subtitle": "נהל את כלי ה-AI והסוכנים החכמים במערכת.",
+      "add_new": "הוספת סוכן חדש",
+      "edit_title": "עריכת סוכן",
+      "create_title": "יצירת סוכן חדש",
+      "new_agent": "סוכן חדש",
+      "form": {
+        "title": "שם הסוכן",
+        "description": "תיאור הסוכן",
+        "category": "קטגוריה",
+        "image": "תמונת סוכן",
+        "link": "קישור לכלי (URL)",
+        "demo": "סרטון הדגמה (URL)",
+        "price": "מחיר (₪)",
+        "paid": "סוכן בתשלום"
+      },
+      "table": {
+        "agent": "סוכן",
+        "category": "קטגוריה",
+        "price": "מחיר",
+        "actions": "פעולות"
+      }
     },
     "courses": {
       "title": "ניהול קורסים 📚",
       "subtitle": "צור, ערוך ונהל את הקורסים המודולריים שלך.",
       "add_new": "יצירת קורס חדש",
       "add_new_agent": "יצירת סוכן חדש",
-      "create_title": "יצירת קורס חדש",
-      "edit_title": "עריכת קורס",
-      "new_course": "קורס חדש",
+      "loading": "טוען קורסים...",
       "delete_confirm": "האם אתה בטוח שברצונך למחוק קורס זה?",
       "delete_module_confirm": "האם אתה בטוח שברצונך למחוק מודול זה וכל השיעורים שבו?",
       "delete_lesson_confirm": "האם אתה בטוח שברצונך למחוק שיעור זה?",
+      "delete_question_confirm": "האם אתה בטוח שברצונך למחוק שאלה זו?",
+      "edit_title": "עריכת קורס",
+      "create_title": "יצירת קורס חדש",
+      "new_course": "קורס חדש",
       "wizard": {
         "step1": "הגדרות ופרטים",
         "step2": "תוכן הקורס",
+        "step3": "מבחן קבלה",
         "next": "המשך לבניית תוכן",
         "back": "חזרה להגדרות",
         "finish": "סיום ושמירה",
         "content_title": "בניית תוכן הקורס",
-        "content_subtitle": "נהל את המודולים והשיעורים של הקורס. השינויים נשמרים אוטומטית.",
+        "content_subtitle": "נהל את המודולים והשיעורים של הקורס. השינויים נשמרים אוטומטיים.",
         "add_module": "הוספת מודול",
         "add_lesson": "הוספת שיעור",
         "no_modules": "עדיין אין מודולים בקורס זה. לחץ על 'הוספת מודול' כדי להתחיל.",
@@ -299,43 +337,45 @@
         "lesson_video": "שיעור וידאו",
         "lesson_text": "שיעור טקסט",
         "lesson_quiz_enabled": "הפעל מבחן בסוף השיעור",
+        "lesson_quiz_disabled_title": "המבחן לשיעור זה כבוי",
+        "lesson_quiz_disabled_subtitle": "ניתן להפעיל את המבחן כדי להתחיל לבנות שאלות עבור התלמיד בסיום השיעור.",
+        "lesson_quiz_activate": "הפעל מבחן עכשיו",
+        "lesson_quiz_disable": "ביטול המבחן",
         "lesson_quiz_builder_title": "בניית מבחן לשיעור",
         "lesson_quiz_builder_subtitle": "הגדר שאלות שהתלמיד יצטרך לענות עליהן בסיום השיעור.",
         "save_lesson": "שמירת שיעור",
         "lesson_quiz_requires_score": "מבחן עם ציון מעבר נדרש",
         "lesson_quiz_min_score": "ציון מעבר מינימלי (%)",
         "lesson_quiz_min_score_hint": "הסטודנט לא יוכל לסיים את השיעור בלי לעבור את הציון הזה",
-        "step3": "מבחן קבלה",
+        "add_question": "הוספת שאלה",
+        "question": "שאלה",
+        "points": "נקודות",
+        "option": "אופציה",
         "pretest_title": "בניית מבחן קבלה",
         "pretest_subtitle": "הגדר את שאלות המבחן וציון המעבר הנדרש.",
-        "min_score": "ציון מעבר מינימלי (%)",
-        "add_question": "הוספת שאלה למבחן"
+        "min_score": "ציון מעבר מינימלי (%)"
+      },
+      "table": {
+        "course": "קורס",
+        "visibility": "נראות",
+        "modules": "מודולים",
+        "price": "מחיר",
+        "actions": "פעולות"
       },
       "form": {
-        "hebrew_content": "תוכן בעברית",
-        "english_content": "תוכן באנגלית",
+        "hebrew_content": "תוכן הקורס",
+        "english_content": "Content",
         "title_he": "שם הקורס",
         "title_en": "שם באנגלית",
         "description_he": "תיאור הקורס",
         "description_en": "תיאור באנגלית",
         "modular_controls": "אפשרויות נוספות",
-        "pre_test": "מבחן קבלה",
-        "ai_mentor": "AI Mentor",
-        "certificate": "תעודה",
-        "paid": "קורס בתשלום",
-        "course_image": "תמונת קורס",
-        "upload_image": "העלה תמונה",
-        "change_image": "שנה תמונה",
         "price_ils": "מחיר (₪)",
-        "ai_mentor_url": "כתובת URL ל-AI Mentor",
-        "payment_url": "קישור לדף סליקה",
-        "external_tool_url": "קישור לכלי (URL)",
-        "demo_video_url": "סרטון הדגמה (URL)",
+        "video_url": "קישור לוידאו",
         "category": "קטגוריה",
         "category_course": "קורס מלא",
         "category_home": "סוכן לבית",
         "category_business": "סוכן לעסק",
-        "video_url": "קישור לוידאו",
         "content_he": "תוכן השיעור",
         "content_en": "תוכן באנגלית",
         "problem_solved_he": "מה הקורס פותר? (עברית)",
@@ -346,7 +386,18 @@
         "course_type_tool": "כלי AI בלבד",
         "duration_text": "משך השיעור (למשל 05:30)",
         "enable_lesson_qa": "הפעל שאלות ותשובות בשיעור",
-        "visibility": "נראות שפות (מערך)"
+        "visibility": "נראות שפות (מערך)",
+        "pre_test": "מבחן קבלה",
+        "ai_mentor": "AI Mentor",
+        "certificate": "תעודה",
+        "paid": "קורס בתשלום",
+        "course_image": "תמונת קורס",
+        "upload_image": "העלה תמונה",
+        "change_image": "שנה תמונה",
+        "ai_mentor_url": "כתובת URL ל-AI Mentor",
+        "payment_url": "קישור לדף סליקה",
+        "external_tool_url": "קישור לכלי (URL)",
+        "demo_video_url": "סרטון הדגמה (URL)"
       },
       "placeholders": {
         "title_he": "לדוגמה: מומחה AI מוסמך",
@@ -359,28 +410,26 @@
         "module_title_en": "Module Title",
         "lesson_title_he": "שם השיעור",
         "lesson_title_en": "Lesson Title",
-        "ai_mentor_url": "הכנס כתובת URL (למשל: https://...)",
-        "payment_url": "קישור לדף סליקה חיצוני",
         "video_url": "הדביקו קישור מיוטיוב או וימיאו",
         "content_he": "כתבו את תוכן השיעור כאן...",
-        "content_en": "Write lesson content here..."
-      },
-      "table": {
-        "course": "קורס",
-        "visibility": "נראות",
-        "modules": "מודולים",
-        "price": "מחיר",
-        "actions": "פעולות"
+        "content_en": "Write lesson content here...",
+        "new_question_text": "הכנס את השאלה כאן...",
+        "ai_mentor_url": "https://...",
+        "payment_url": "https://..."
       }
     },
     "users": {
       "title": "ניהול משתמשים 👥",
       "subtitle": "צפה בהתקדמות הסטודנטים וסטטוס ההרשמה.",
-      "search_placeholder": "חיפוש לפי שם או אימייל..."
-    },
-    "sales": {
-      "title": "סקירת מכירות 📈",
-      "subtitle": "עקוב אחר ההכנסות והצמיחה של הפלטפורמה."
+      "search_placeholder": "חיפוש לפי שם או אימייל...",
+      "loading": "טוען משתמשים...",
+      "anonymous": "משתמש אנונימי",
+      "role_admin": "מנהל",
+      "joined": "הצטרף ב-",
+      "enrolled": "רשום",
+      "pending": "ממתין",
+      "pre_test": "מבחן קבלה",
+      "no_courses": "לא רשום לקורסים"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { X, DollarSign, ExternalLink, Video, CheckCircle2, Globe, Brain, Shield, Award, Layout, ArrowLeft } from 'lucide-react';
+import { X, ExternalLink, Video, CheckCircle2, Globe, Brain, Shield, Award, Layout, ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getLocalized } from '../utils/i18n';
 
@@ -72,7 +72,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
               {product.problem_solved && (
                 <div>
                   <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2 text-inline-start">
-                    <CheckCircle2 size={16} className="text-green-500" /> מה זה פותר?
+                    <CheckCircle2 size={16} className="text-green-500" /> {t('admin.courses.form.problem_solved_he')}
                   </h3>
                   <p className="text-gray-600 text-lg leading-relaxed text-inline-start">
                     {getLocalized(product, 'problem_solved', lng)}
@@ -84,19 +84,19 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
                 {product.has_ai_mentor && (
                   <div className="flex items-center gap-3 text-sm font-bold text-navy bg-gray-50 px-4 py-2 rounded-xl">
                     <Brain size={18} className="text-purple-500" />
-                    AI Mentor כלול
+                    {t('admin.courses.form.ai_mentor')}
                   </div>
                 )}
                 {product.has_certificate && (
                   <div className="flex items-center gap-3 text-sm font-bold text-navy bg-gray-50 px-4 py-2 rounded-xl">
                     <Award size={18} className="text-yellow-500" />
-                    תעודה מוסמכת
+                    {t('admin.courses.form.certificate')}
                   </div>
                 )}
                 {product.has_pre_test && (
                   <div className="flex items-center gap-3 text-sm font-bold text-navy bg-gray-50 px-4 py-2 rounded-xl">
                     <Shield size={18} className="text-blue-500" />
-                    נדרש מבחן קבלה
+                    {t('admin.courses.form.pre_test')}
                   </div>
                 )}
               </div>
@@ -146,14 +146,14 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
                       className="w-full py-4 rounded-2xl border-2 border-gray-200 text-navy font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
                     >
                       <Video size={20} className="text-red-500" />
-                      צפה בהדגמה
+                      {t('admin.agents.form.demo')}
                     </a>
                   )}
                 </div>
 
                 {!isEnrolled && !isFree && (
                   <p className="text-[10px] text-gray-400 font-bold text-center mt-6 uppercase tracking-widest leading-relaxed">
-                    גישה לכל החיים • תמיכה מקצועית • עדכונים שוטפים
+                    {t('purchase.sticky.lifetime_access')}
                   </p>
                 )}
               </div>

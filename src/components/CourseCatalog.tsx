@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, PlayCircle, CheckCircle2, Clock, Users, ArrowRight, ArrowLeft, Bot, Home, Briefcase, ExternalLink, Play, Info } from 'lucide-react';
+import { CheckCircle2, Clock, ArrowRight, ArrowLeft, Bot, Home, Briefcase, ExternalLink, Play, Info } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getLocalized, filterByVisibility } from '../utils/i18n';
 import { supabase } from '../lib/supabase';

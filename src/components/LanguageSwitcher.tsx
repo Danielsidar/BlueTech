@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
 
 interface LanguageSwitcherProps {
-  containerClassName?: string;
+  className?: string;
   buttonClassName?: string;
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ 
-  containerClassName = '', 
+  className = '', 
   buttonClassName = '' 
 }) => {
   const { i18n, t } = useTranslation();
@@ -38,7 +38,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   };
 
   return (
-    <div className={`relative ${containerClassName}`} ref={dropdownRef}>
+    <div className={`relative ${className}`} ref={dropdownRef}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center gap-2 p-1 rounded-full transition-all active:scale-95 border ${buttonClassName ? 'border-white/10' : 'border-transparent hover:bg-gray-100 hover:border-gray-200'} ${buttonClassName}`}

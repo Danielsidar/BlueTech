@@ -13,7 +13,7 @@ interface CourseManagementProps {
 }
 
 const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = false }) => {
-  const { t, i18n } = useTranslation('common');
+  const { t, i18n: _i18n } = useTranslation('common');
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -35,7 +35,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
   }, [isAgentsMode]);
 
   const fetchLessonQuizzes = async (lessonId: string) => {
-    const { data, error } = await supabase
+    const { data, error: _error } = await supabase
       .from('quizzes')
       .select('*')
       .eq('lesson_id', lessonId)
@@ -47,7 +47,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
   };
 
   const fetchPreTestQuizzes = async (courseId: string) => {
-    const { data, error } = await supabase
+    const { data, error: _error } = await supabase
       .from('quizzes')
       .select('*')
       .eq('course_id', courseId)
@@ -86,7 +86,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
 
   const fetchModulesAndLessons = async (courseId: string) => {
     try {
-      const { data: modulesData, error: modulesError } = await supabase
+      const { data: modulesData, error: _modulesError } = await supabase
         .from('modules')
         .select(`
           *,
@@ -119,7 +119,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
       const fileName = `${Math.random()}.${fileExt}`;
       const filePath = `course-covers/${fileName}`;
 
-      const { error: uploadError, data } = await supabase.storage
+      const { error: uploadError, data: _data } = await supabase.storage
         .from('course-images')
         .upload(filePath, file);
 
@@ -157,7 +157,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
     const courseData = {
       ...editingCourse,
       language: editingCourse.language || 'he',
-      slug: editingCourse.slug || (editingCourse.title ? `${generateSlug(editingCourse.title) || 'agent'}-${Math.random().toString(36).substring(2, 7)}` : undefined),
+      slug: editingCourse.slug || (editingCourse.title ? `${generateSlug(editingCourse.title) || 'agent'}-${Math.random().toString(36).substring(2, 7)}` : `placeholder-${Math.random().toString(36).substring(2, 7)}`),
     };
 
     // Remove fields that shouldn't be sent to the DB
@@ -202,7 +202,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
       fetchCourses();
     } catch (error: any) {
       console.error('Error saving course:', error);
-      alert(`שגיאה בשמירת הנתונים: ${error.message || error.details || 'שגיאה לא ידועה'}`);
+      alert(`${t('common.error')}: ${error.message || error.details || t('common.unknown_error')}`);
     }
   };
 
@@ -210,7 +210,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
     if (!editingCourse?.id) return;
     const newModule = {
       course_id: editingCourse.id,
-      title: 'מודול חדש',
+      title_he: t('admin.courses.wizard.new_module'),
       order_index: modules.length
     };
 
@@ -226,7 +226,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
 
     const newLesson = {
       module_id: moduleId,
-      title: 'שיעור חדש',
+      title_he: t('admin.courses.wizard.new_lesson'),
       order_index: module.lessons.length,
       lesson_type: 'video'
     };
@@ -350,9 +350,9 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                 {loading ? (
                   <tr><td colSpan={4} className="px-8 py-12 text-center text-gray-400 font-bold">{t('admin.courses.loading')}</td></tr>
                 ) : error ? (
-                  <tr><td colSpan={4} className="px-8 py-12 text-center text-red-500 font-bold">שגיאה: {error}</td></tr>
+                  <tr><td colSpan={4} className="px-8 py-12 text-center text-red-500 font-bold">{t('common.error')}: {error}</td></tr>
                 ) : courses.length === 0 ? (
-                  <tr><td colSpan={4} className="px-8 py-12 text-center text-gray-400 font-bold">לא נמצאו פריטים</td></tr>
+                  <tr><td colSpan={4} className="px-8 py-12 text-center text-gray-400 font-bold">{t('admin.courses.no_items', 'לא נמצאו פריטים')}</td></tr>
                 ) : (
                   courses.map((course) => (
                     <tr key={course.id} className="hover:bg-gray-50/50 transition-colors group">
@@ -382,9 +382,9 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                           </span>
                         ) : (
                         <div className="flex gap-3">
-                          <StatusBadge active={course.has_pre_test} icon={Shield} color="blue" />
-                          <StatusBadge active={course.has_ai_mentor} icon={Brain} color="purple" />
-                          <StatusBadge active={course.has_certificate} icon={Award} color="yellow" />
+                          <StatusBadge active={!!course.has_pre_test} icon={Shield} color="blue" />
+                          <StatusBadge active={!!course.has_ai_mentor} icon={Brain} color="purple" />
+                          <StatusBadge active={!!course.has_certificate} icon={Award} color="yellow" />
                         </div>
                         )}
                       </td>
@@ -525,7 +525,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                           </div>
                           
                           <div className="space-y-4">
-                            <label className="block text-sm font-black text-navy uppercase tracking-widest">שפה</label>
+                            <label className="block text-sm font-black text-navy uppercase tracking-widest">{t('purchase.stats.language')}</label>
                             <div className="flex flex-col gap-2">
                               <button 
                                 type="button"
@@ -533,7 +533,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                 className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-3 ${editingCourse?.language === 'he' ? 'border-emerald-500 bg-emerald-50 text-emerald-600' : 'border-gray-100 text-gray-400'}`}
                               >
                                 <div className="w-5 h-5 rounded-md bg-current opacity-20 flex items-center justify-center text-[10px] text-white font-black">HE</div>
-                                <span className="font-bold text-xs">עברית</span>
+                                <span className="font-bold text-xs">{t('languages.he')}</span>
                               </button>
                               <button 
                                 type="button"
@@ -541,7 +541,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                 className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-3 ${editingCourse?.language === 'en' ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-100 text-gray-400'}`}
                               >
                                 <div className="w-5 h-5 rounded-md bg-current opacity-20 flex items-center justify-center text-[10px] text-white font-black">EN</div>
-                                <span className="font-bold text-xs">English</span>
+                                <span className="font-bold text-xs">{t('languages.en')}</span>
                               </button>
                             </div>
                           </div>
@@ -567,7 +567,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                     : 'border-gray-100 text-gray-400'
                                 }`}
                               >
-                                {lang === 'he' ? 'עברית' : 'English'}
+                                {lang === 'he' ? t('languages.he') : t('languages.en')}
                               </button>
                             ))}
                           </div>
@@ -826,14 +826,14 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                 </div>
                                 <div className="flex-1 pt-2">
                                   <p className="text-xs text-gray-400 font-bold leading-relaxed mb-4">
-                                    מומלץ להעלות תמונה ביחס של 16:9<br />
-                                    גודל מקסימלי: 2MB. פורמטים נתמכים: JPG, PNG, WebP.
+                                    {t('admin.courses.form.upload_image_hint', 'מומלץ להעלות תמונה ביחס של 16:9')}<br />
+                                    {t('admin.courses.form.upload_image_formats', 'גודל מקסימלי: 2MB. פורמטים נתמכים: JPG, PNG, WebP.')}
                                   </p>
                                   <input 
                                     className="w-full bg-gray-50 border-none rounded-2xl px-6 py-4 font-medium focus:ring-2 focus:ring-navy/5 transition-all text-xs"
                                     value={editingCourse?.image_url || ''}
                                     onChange={e => setEditingCourse({...editingCourse, image_url: e.target.value})}
-                                    placeholder="או הדבק כתובת URL לתמונה..."
+                                    placeholder={t('admin.courses.form.course_image_url_placeholder', 'או הדבק כתובת URL לתמונה...')}
                                   />
                                 </div>
                               </div>
@@ -895,7 +895,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
 
                         <div className="space-y-8">
                           <h4 className="text-sm font-black text-navy uppercase tracking-widest flex items-center gap-2 bg-gray-50 w-fit px-4 py-2 rounded-xl">
-                            <Globe size={16} /> שפת הקורס
+                            <Globe size={16} /> {t('purchase.stats.language')}
                           </h4>
                           <div className="space-y-4">
                             <button 
@@ -910,7 +910,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                               <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${editingCourse?.language === 'he' ? 'bg-emerald-500 text-white' : 'bg-gray-100'}`}>
                                 HE
                               </div>
-                              <span className="font-black text-sm">עברית</span>
+                              <span className="font-black text-sm">{t('languages.he')}</span>
                               {editingCourse?.language === 'he' && <Check size={20} className="ml-auto" />}
                             </button>
 
@@ -926,7 +926,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                               <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${editingCourse?.language === 'en' ? 'bg-blue-500 text-white' : 'bg-gray-100'}`}>
                                 EN
                               </div>
-                              <span className="font-black text-sm">English</span>
+                              <span className="font-black text-sm">{t('languages.en')}</span>
                               {editingCourse?.language === 'en' && <Check size={20} className="ml-auto" />}
                             </button>
                           </div>
@@ -950,7 +950,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                     : 'border-gray-100 text-gray-400'
                                 }`}
                               >
-                                {lang === 'he' ? 'עברית' : 'English'}
+                                {lang === 'he' ? t('languages.he') : t('languages.en')}
                               </button>
                             ))}
                           </div>
@@ -1101,7 +1101,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                       </div>
 
                       <div className="space-y-6">
-                        {modules.map((module, mIndex) => (
+                        {modules.map((module, _mIndex) => (
                           <div key={module.id} className="bg-gray-50 rounded-[24px] p-6 border border-gray-100">
                             <div className="flex justify-between items-start mb-6">
                               <div className="flex-1">
@@ -1338,13 +1338,13 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                             if (!editingCourse?.id) return;
                             const newQuiz = {
                               course_id: editingCourse.id,
-                              question_he: 'שאלה חדשה',
+                              question_he: t('admin.courses.placeholders.new_question_text'),
                               options_he: ['', '', '', ''],
                               correct_answer_index: 0,
                               order_index: preTestQuizzes.length
                             };
-                            const { data, error } = await supabase.from('quizzes').insert([newQuiz]).select().single();
-                            if (data) setPreTestQuizzes([...preTestQuizzes, data]);
+                            const { data: _data, error: _error } = await supabase.from('quizzes').insert([newQuiz]).select().single();
+                            if (_data) setPreTestQuizzes([...preTestQuizzes, _data]);
                           }}
                           className="w-full py-8 border-2 border-dashed border-gray-200 rounded-[32px] text-gray-400 font-black flex items-center justify-center gap-3 hover:border-emerald-500/20 hover:text-emerald-500 hover:bg-emerald-50/30 transition-all"
                         >
@@ -1597,15 +1597,15 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                         question_he: 'שאלה חדשה',
                                         options_he: ['', '', '', ''],
                                         correct_answer_index: 0,
-                                        order_index: currentQuizzes.length
-                                      };
-                                      const { data, error } = await supabase.from('quizzes').insert([newQuiz]).select().single();
-                                      if (data) {
-                                        setLessonQuizzes(prev => ({
-                                          ...prev,
-                                          [lesson.id]: [...(prev[lesson.id] || []), data]
-                                        }));
-                                      }
+                                       order_index: currentQuizzes.length
+                                     };
+                                     const { data: _data, error: _error } = await supabase.from('quizzes').insert([newQuiz]).select().single();
+                                     if (_data) {
+                                       setLessonQuizzes(prev => ({
+                                         ...prev,
+                                         [lesson.id]: [...(prev[lesson.id] || []), _data]
+                                       }));
+                                     }
                                     }}
                                     className="bg-navy text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2"
                                   >

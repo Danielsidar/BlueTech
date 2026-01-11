@@ -169,6 +169,55 @@ export type Database = {
           }
         ]
       },
+      lesson_qa: {
+        Row: {
+          id: string
+          lesson_id: string
+          user_id: string
+          content: string
+          parent_id: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          lesson_id: string
+          user_id: string
+          content: string
+          parent_id?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          lesson_id?: string
+          user_id?: string
+          content?: string
+          parent_id?: string | null
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lesson_qa_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "lessons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "lesson_qa_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "lesson_qa_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "lesson_qa"
+            referencedColumns: ["id"]
+          }
+        ]
+      },
       courses: {
         Row: {
           agent_id_en: string | null

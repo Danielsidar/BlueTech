@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  MessageSquare, Send, Heart, MoreHorizontal, 
+  Send, MoreHorizontal, 
   Loader2, User, Image as ImageIcon, X, 
   Share2, Globe, ThumbsUp, MessageCircle
 } from 'lucide-react';

@@ -31,7 +31,7 @@ const UserManagement: React.FC = () => {
   const fetchUsers = async () => {
     setLoading(true);
     // Fetch profiles with their course access info
-    const { data, error } = await supabase
+    const { data, error: _error } = await supabase
       .from('profiles')
       .select(`
         *,

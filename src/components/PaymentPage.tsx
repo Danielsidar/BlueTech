@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { CreditCard, ShieldCheck, CheckCircle2, Loader2, ArrowRight, ArrowLeft } from 'lucide-react';
+import { CreditCard, ShieldCheck, CheckCircle2, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabase';
 import { getLocalized } from '../utils/i18n';
@@ -24,7 +24,7 @@ const PaymentPage: React.FC = () => {
     }
 
     const fetchCourse = async () => {
-      const { data, error } = await supabase
+      const { data, error: _error } = await supabase
         .from('courses')
         .select('*')
         .eq('id', courseId)
@@ -38,6 +38,7 @@ const PaymentPage: React.FC = () => {
   }, [courseId, navigate]);
 
   const handlePayment = async () => {
+    if (!courseId) return;
     setProcessing(true);
     
     try {

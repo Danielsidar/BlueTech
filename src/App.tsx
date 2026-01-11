@@ -60,14 +60,14 @@ const VideoPlayer: React.FC<{ url: string }> = ({ url }) => {
     return (
       <div className="aspect-video bg-navy rounded-3xl flex flex-col items-center justify-center text-white p-6 text-center">
         <ExternalLink size={48} className="mb-4 opacity-50" />
-        <p className="font-bold mb-4">קישור וידאו לא נתמך להטמעה ישירה</p>
+        <p className="font-bold mb-4">{t('classroom.video_not_supported', 'קישור וידאו לא נתמך להטמעה ישירה')}</p>
         <a 
           href={url} 
           target="_blank" 
           rel="noopener noreferrer"
           className="bg-primary px-6 py-2 rounded-xl font-bold hover:bg-primary-dark transition-all"
         >
-          צפה בנגן חיצוני
+          {t('classroom.view_external', 'צפה בנגן חיצוני')}
         </a>
       </div>
     );
@@ -270,7 +270,7 @@ const Dashboard: React.FC<{ courses: any[], user: any }> = ({ courses, user }) =
         let completedCourses = 0;
         filteredCourses.forEach(course => {
           const courseLessonIds = course.modules?.flatMap((m: any) => m.lessons?.map((l: any) => l.id) || []) || [];
-          const isCourseDone = courseLessonIds.length > 0 && courseLessonIds.every(id => progressData?.some(p => p.lesson_id === id));
+          const isCourseDone = courseLessonIds.length > 0 && courseLessonIds.every((id: string) => progressData?.some(p => p.lesson_id === id));
           if (isCourseDone) completedCourses++;
         });
         setCompletedCount(completedCourses);
@@ -335,7 +335,7 @@ const AppRoutes: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
-  const { session, user, isAdmin, loading: authLoading } = useAuth();
+  const { session, user, isAdmin: _isAdmin, loading: _authLoading } = useAuth();
   const [courses, setCourses] = useState<any[]>([]);
   const [selectedCourse, setSelectedCourse] = useState<any | null>(null);
   const [currentLesson, setCurrentLesson] = useState<any | null>(null);
@@ -359,7 +359,7 @@ const AppRoutes: React.FC = () => {
     setHasPassedQuiz(false);
   }, [currentLesson]);
 
-  const fetchLessonProgress = async (courseId: string) => {
+  const fetchLessonProgress = async (_courseId: string) => {
     if (!user) return;
     try {
       // Get all lessons for this course to filter progress

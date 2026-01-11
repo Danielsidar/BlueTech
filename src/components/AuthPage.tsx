@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { Mail, Lock, User, ArrowRight, ArrowLeft, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, ArrowLeft, Loader2, AlertCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabase';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -58,7 +58,7 @@ const AuthPage: React.FC = () => {
 
     try {
       if (mode === 'signup') {
-        const { data, error: signUpError } = await supabase.auth.signUp({
+        const { data: _data, error: signUpError } = await supabase.auth.signUp({
           email,
           password,
           options: {

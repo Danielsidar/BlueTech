@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Clock, PlayCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Clock, PlayCircle, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getLocalized, filterByVisibility } from '../utils/i18n';
 import { supabase } from '../lib/supabase';
@@ -46,9 +46,10 @@ const MyCourses: React.FC = () => {
 
           if (error) throw error;
           // Filter out ai_tool_only courses and agent categories
-          myCourses = (data?.map(item => item.courses) || []).filter(c => 
-            c?.course_type === 'full_course' && 
-            !['ai_agent_home', 'ai_agent_business'].includes(c.category)
+          myCourses = (data?.map(item => item.courses) || []).filter((c): c is any => 
+            !!c && 
+            c.course_type === 'full_course' && 
+            !['ai_agent_home', 'ai_agent_business'].includes(c.category || '')
           );
         }
         

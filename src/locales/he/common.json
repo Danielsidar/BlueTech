@@ -128,7 +128,8 @@
       "free": "חינם",
       "cta": "הרשמה מיידית",
       "cta_locked": "נדרש מעבר מבחן",
-      "locked_hint": "עבור את מבחן הקבלה כדי לפתוח את ההרשמה"
+      "locked_hint": "עבור את מבחן הקבלה כדי לפתוח את ההרשמה",
+      "lifetime_access": "גישה לכל החיים • תמיכה מקצועית • עדכונים שוטפים"
     }
   },
   "knowledge": {
@@ -179,7 +180,8 @@
     "my_certificates": "התעודות שלי",
     "cert_title": "תעודת סיום - מומחה AI",
     "cert_date": "הוענק ב-{{date}}",
-    "download_cert": "הורד תעודה (PDF)"
+    "download_cert": "הורד תעודה (PDF)",
+    "no_certificates": "עדיין אין תעודות להצגה"
   },
   "community": {
     "title": "קהילת BlueTech",
@@ -265,7 +267,9 @@
   "common": {
     "cancel": "ביטול",
     "save": "שמירת שינויים",
-    "loading": "טוען..."
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "unknown_error": "שגיאה לא ידועה"
   },
   "admin": {
     "console_title": "ממשק ניהול",
@@ -317,6 +321,7 @@
       "wizard": {
         "step1": "הגדרות ופרטים",
         "step2": "תוכן הקורס",
+        "step3": "מבחן קבלה",
         "next": "המשך לבניית תוכן",
         "back": "חזרה להגדרות",
         "finish": "סיום ושמירה",
@@ -324,6 +329,8 @@
         "content_subtitle": "נהל את המודולים והשיעורים של הקורס. השינויים נשמרים אוטומטיים.",
         "add_module": "הוספת מודול",
         "add_lesson": "הוספת שיעור",
+        "new_module": "מודול חדש",
+        "new_lesson": "שיעור חדש",
         "no_modules": "עדיין אין מודולים בקורס זה. לחץ על 'הוספת מודול' כדי להתחיל.",
         "lesson_details": "פרטי שיעור",
         "edit_lesson_details": "עריכת פרטי שיעור",
@@ -348,7 +355,6 @@
         "question": "שאלה",
         "points": "נקודות",
         "option": "אופציה",
-        "step3": "מבחן קבלה",
         "pretest_title": "בניית מבחן קבלה",
         "pretest_subtitle": "הגדר את שאלות המבחן וציון המעבר הנדרש.",
         "min_score": "ציון מעבר מינימלי (%)"
@@ -368,27 +374,42 @@
         "description_he": "תיאור הקורס",
         "description_en": "תיאור באנגלית",
         "modular_controls": "אפשרויות נוספות",
-        "pre_test": "מבחן קבלה",
-        "ai_mentor": "AI Mentor",
-        "certificate": "תעודה",
-        "paid": "קורס בתשלום",
         "price_ils": "מחיר (₪)",
         "video_url": "קישור לוידאו",
-        "ai_mentor_url": "כתובת URL ל-AI Mentor",
-        "external_tool_url": "קישור לכלי (URL)",
-        "demo_video_url": "סרטון הדגמה (URL)",
         "category": "קטגוריה",
         "category_course": "קורס מלא",
         "category_home": "סוכן לבית",
         "category_business": "סוכן לעסק",
         "content_he": "תוכן השיעור",
-        "content_en": "תוכן באנגלית"
+        "content_en": "תוכן באנגלית",
+        "problem_solved_he": "מה הקורס פותר? (עברית)",
+        "problem_solved_en": "מה הקורס פותר? (אנגלית)",
+        "duration_minutes": "משך הקורס (דקות)",
+        "course_type": "סוג הקורס",
+        "course_type_training": "הכשרה מקצועית",
+        "course_type_tool": "כלי AI בלבד",
+        "duration_text": "משך השיעור (למשל 05:30)",
+        "enable_lesson_qa": "הפעל שאלות ותשובות בשיעור",
+        "visibility": "נראות שפות (מערך)",
+        "pre_test": "מבחן קבלה",
+        "ai_mentor": "AI Mentor",
+        "certificate": "תעודה",
+        "paid": "קורס בתשלום",
+        "course_image": "תמונת קורס",
+        "upload_image": "העלה תמונה",
+        "change_image": "שנה תמונה",
+        "ai_mentor_url": "כתובת URL ל-AI Mentor",
+        "payment_url": "קישור לדף סליקה",
+        "external_tool_url": "קישור לכלי (URL)",
+        "demo_video_url": "סרטון הדגמה (URL)"
       },
       "placeholders": {
         "title_he": "לדוגמה: מומחה AI מוסמך",
         "title_en": "e.g. Certified AI Expert",
         "description_he": "כתבו כמה מילים על הקורס...",
         "description_en": "Write a short description...",
+        "problem_solved_he": "למשל: איך לבנות סוכן AI מאפס...",
+        "problem_solved_en": "e.g. How to build an AI agent...",
         "module_title_he": "שם המודול (למשל: מבוא ל-AI)",
         "module_title_en": "Module Title",
         "lesson_title_he": "שם השיעור",
@@ -396,7 +417,9 @@
         "video_url": "הדביקו קישור מיוטיוב או וימיאו",
         "content_he": "כתבו את תוכן השיעור כאן...",
         "content_en": "Write lesson content here...",
-        "new_question_text": "הכנס את השאלה כאן..."
+        "new_question_text": "הכנס את השאלה כאן...",
+        "ai_mentor_url": "https://...",
+        "payment_url": "https://..."
       }
     },
     "users": {

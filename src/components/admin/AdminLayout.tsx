@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LayoutDashboard, Users, BookOpen, BarChart3, LogOut, ArrowLeft } from 'lucide-react';
+import { LayoutDashboard, Users, BookOpen, LogOut, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import LanguageSwitcher from '../LanguageSwitcher';
 

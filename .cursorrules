@@ -1,0 +1,37 @@
+# BlueTech Education Project Coding Standards
+
+As an AI coding assistant, you must adhere to the following rules for all interactions in this project.
+
+## 1. Strict i18n & Translation Standards
+- **No Raw Keys:** Never display dotted translation keys (e.g., `admin.course.title`) in the UI. Always use the `t()` function.
+- **JSON-First Workflow:** Before adding a new key to the code, you MUST update both `public/locales/he/common.json` and `public/locales/en/common.json`.
+- **Real Content Only:** Use professional, real-world Hebrew and English content. No "Test 1" or placeholders.
+- **Language Awareness:** Ensure components handle language switching gracefully (RTL/LTR).
+
+## 2. UI & Layout (RTL/LTR Support)
+- **Directional Styling:** Use Tailwind logical properties instead of fixed left/right:
+  - Use `ps-*` and `pe-*` (padding start/end)
+  - Use `ms-*` and `me-*` (margin start/end)
+  - Use `start-*` and `end-*` (positioning)
+  - Use `text-start` and `text-end`
+  - Use `rounded-s-*` and `rounded-e-*`
+- **Font Handling:** 
+  - Hebrew: Heebo, Assistant
+  - English: Inter, Montserrat
+- **Layout:** Ensure all UI layouts are fully responsive and mirror correctly when switching between RTL and LTR.
+
+## 3. Modular & Data-Driven Architecture
+- **Course Logic:** Always check course flags (`has_pre_test`, `is_paid`, `has_ai_mentor`) before rendering features.
+- **Visibility Logic:** Always filter content/courses based on the `visibility` array (e.g., `['he', 'en']`) and the current active UI language.
+- **Admin Protection:** All admin routes and components must include a role check (`role === 'admin'`).
+
+## 4. Supabase & Database Management
+- **MCP First:** Before suggesting schema changes, use the Supabase MCP to inspect existing tables and policies.
+- **Migrations:** Always propose a migration plan before executing changes.
+- **Type Safety:** Always use and update generated TypeScript types from the database (`src/types/database.types.ts`).
+
+## 5. Component Standards
+- **Tech Stack:** Functional React components, Tailwind CSS, and `lucide-react` for icons.
+- **Separation of Concerns:** Keep logic separated into hooks or services where possible.
+- **Readability:** Maintain clean, well-commented code that follows existing project patterns.
+

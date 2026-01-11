@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Assistant:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root[dir="rtl"] {
+    --main-font: 'Assistant', 'Heebo', sans-serif;
+  }
+  
+  :root[dir="ltr"] {
+    --main-font: 'Inter', 'Montserrat', sans-serif;
+  }
+
+  body {
+    font-family: var(--main-font);
+    @apply bg-white text-navy;
+  }
+}
+
+.ai-mentor-panel {
+  background: linear-gradient(135deg, #001f3f 0%, #004a99 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-mentor-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 80%);
+  pointer-events: none;
+}
+

@@ -1,0 +1,414 @@
+{
+  "header": {
+    "search_placeholder": "Search courses, lessons or summaries...",
+    "user_name": "Daniel Sidar",
+    "user_role": "VIP Student",
+    "admin_panel": "Admin Panel"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "courses": "My Courses",
+    "agents": "Digital Assistants",
+    "community": "Community",
+    "knowledge": "Knowledge Base",
+    "profile": "My Account",
+    "catalog": "Course Catalog",
+    "logout": "Logout"
+  },
+  "agents": {
+    "title": "Digital Assistants 🤖",
+    "subtitle": "The smartest AI agents at your service, for home and business.",
+    "filter_home": "For Home",
+    "filter_business": "For Business",
+    "open_tool": "Open Tool",
+    "more_details": "More Details",
+    "buy_now": "Buy for ₪{{price}}",
+    "free": "Free",
+    "home_title": "Home Agents",
+    "business_title": "Business Agents"
+  },
+  "dashboard": {
+    "welcome": "Hello, Daniel! 👋",
+    "subtitle": "Great to see you again. Here's what's happening today in your learning.",
+    "stats": {
+      "learning_hours": "Learning Hours This Week",
+      "completed_courses": "Completed Courses",
+      "learning_streak": "Learning Streak",
+      "hours_unit": "hours",
+      "courses_unit": "courses",
+      "days_unit": "days"
+    },
+    "promo": {
+      "new_mission": "New Mission",
+      "title": "Complete the next module in the<br />Certified AI Expert course",
+      "description": "You only have 3 lessons left to get your official certification!",
+      "button": "Continue Learning",
+      "completed_label": "Completed"
+    }
+  },
+  "app_courses": {
+    "title": "My Courses 📚",
+    "subtitle": "Pick up right where you left off",
+    "buttons": {
+      "buy_now": "Buy Now",
+      "start": "Start Learning",
+      "continue": "Continue Learning"
+    }
+  },
+  "catalog": {
+    "title": "Course Catalog",
+    "subtitle": "All the knowledge you need to lead in AI",
+    "purchased": "Already purchased",
+    "start_learning": "Start Learning",
+    "buy_now": "Buy Now"
+  },
+  "classroom": {
+    "active_lesson": "Active Lesson",
+    "ai_tool": "Smart Work Interface",
+    "completed": "Completed",
+    "welcome_back": "Welcome back,",
+    "video_lesson": "Video Lesson",
+    "quiz_title": "Lesson Final Quiz 📝",
+    "quiz_button": "Start Lesson Quiz",
+    "tasks_title": "Tasks for this lesson ✨",
+    "tasks": [
+      "Watch the entire lesson video carefully",
+      "Download support materials"
+    ],
+    "finish_button": "I finished the lesson"
+  },
+  "purchase": {
+    "back_to_catalog": "Back to Catalog",
+    "enroll_now": "Enroll Now",
+    "pretest_required_btn": "Pre-test Required",
+    "tags": {
+      "ai_tool": "Advanced AI Tool",
+      "professional_training": "Professional Training",
+      "pretest_required": "Admission Test Required",
+      "certified": "Certified"
+    },
+    "stats": {
+      "duration": "Duration",
+      "language": "Language",
+      "certificate": "Certificate",
+      "access": "Access",
+      "language_val": "English",
+      "certified_val": "Recognized",
+      "no_certificate": "None",
+      "lifetime_access": "Lifetime"
+    },
+    "pretest": {
+      "title": "This course requires an admission test",
+      "description": "To ensure professional fit, you must pass a short test with a score of at least {{score}}%.",
+      "start_button": "Start Admission Test",
+      "your_score": "Your score: {{score}}%. Try again later.",
+      "passed_title": "You passed the test!",
+      "passed_description": "Your score: {{score}}%. Now you can enroll in the course."
+    },
+    "included": {
+      "title": "What's included in the training?",
+      "items": [
+        "Full mastery of the most advanced tools",
+        "Building an impressive industry portfolio",
+        "Access to a personal AI Mentor",
+        "Professional guidance from lecturers",
+        "Preparation for job interviews and placement",
+        "Final certification test",
+        "Practical final project",
+        "Access to the exclusive alumni community"
+      ]
+    },
+    "ready": {
+      "title": "Ready to start?",
+      "cta": "Reserve my spot",
+      "cta_locked": "Test pass required"
+    },
+    "sticky": {
+      "price": "Price:",
+      "free": "Free",
+      "cta": "Immediate Enrollment",
+      "cta_locked": "Test pass required",
+      "locked_hint": "Pass the admission test to unlock enrollment"
+    }
+  },
+  "knowledge": {
+    "title": "Knowledge Base",
+    "subtitle": "Everything happening in the AI world in one place.",
+    "search_placeholder": "Search articles, guides or news...",
+    "read_time": "7 min read",
+    "read_more": "Read more"
+  },
+  "qa": {
+    "title": "Q&A from the Community",
+    "questions_count": "{{count}} questions",
+    "replies_count": "{{count}} replies",
+    "add_reply": "Add reply",
+    "input_placeholder": "Have a question about the lesson? Ask here...",
+    "mock_users": {
+      "oren": "Oren Levi",
+      "michal": "Michal Cohen"
+    },
+    "mock_questions": {
+      "q1": "Is this architecture also suitable for image processing?",
+      "q2": "What is the difference between Attention and Self-Attention mechanisms?"
+    }
+  },
+  "quiz": {
+    "question_progress": "Question {{current}} of {{total}}",
+    "prev": "Previous",
+    "next": "Next",
+    "finish": "Finish Quiz",
+    "completed_title": "Quiz Completed!",
+    "completed_subtitle": "Quiz results have been sent to the system. You can continue to the next step.",
+    "back_button": "Back to course",
+    "score": "Your score: {{score}}%",
+    "passed": "Congratulations! You passed the test 🥳",
+    "failed": "Not bad, you're almost there! It's worth reviewing the material and trying again.",
+    "retry": "Retry",
+    "min_score_hint": "Passing score: {{score}}%",
+    "summary": "Answers summary"
+  },
+  "profile": {
+    "title": "My Account",
+    "subtitle": "Manage your learning, achievements, and settings.",
+    "my_courses": "My Courses",
+    "progress": "Progress: {{percent}}%",
+    "lessons_left": "{{count}} lessons left",
+    "my_certificates": "My Certificates",
+    "cert_title": "Certification - AI Expert",
+    "cert_date": "Awarded on {{date}}",
+    "download_cert": "Download Certificate (PDF)"
+  },
+  "community": {
+    "title": "BlueTech Community",
+    "subtitle": "Your place to share, ask, and grow together",
+    "create_post_placeholder": "What's on your mind, {{name}}?",
+    "post_button": "Post",
+    "likes": "Likes",
+    "comments": "Comments",
+    "write_comment": "Write a comment...",
+    "no_posts": "No posts yet. Be the first to share!",
+    "just_now": "Just now",
+    "upload_image": "Add Image",
+    "remove_image": "Remove",
+    "sharing_with": "Sharing with",
+    "public": "Everyone",
+    "anonymous": "Anonymous User",
+    "like": "Like",
+    "comment": "Comment",
+    "share": "Share",
+    "view_more_comments": "View more comments",
+    "editing": "Edit",
+    "delete": "Delete"
+  },
+  "ai_tool": {
+    "cards": {
+      "code": { "title": "Code Analysis", "desc": "Scan and identify bugs" },
+      "security": { "title": "Security", "desc": "Protect sensitive information" },
+      "optimization": { "title": "Optimization", "desc": "Automatic performance improvement" }
+    },
+    "main": {
+      "title": "Agent Control Center",
+      "description": "Here you can activate your AI agent, define tasks, and see results in real-time.",
+      "input_placeholder": "Enter command to execute..."
+    }
+  },
+  "landing": {
+    "badge": "Israel's Leading Academy for AI and High-Tech",
+    "hero_title": "Stop dreaming about the <span class=\"text-primary\">future</span><br />Start building it.",
+    "hero_subtitle": "Join thousands of graduates already integrated into the industry with the most advanced courses.",
+    "hero_cta_catalog": "View Course Catalog",
+    "hero_cta_how_it_works": "How it works?",
+    "catalog_title": "Your Path to Success",
+    "tabs": {
+      "certificate": "Certification Programs",
+      "fast_track": "Accelerated Tracks",
+      "personal_ai": "Personal AI Assistant",
+      "business_ai": "AI for Business"
+    },
+    "course_card": {
+      "students": "1.2k+ graduates",
+      "cta_pretest": "Suitability Test",
+      "cta_details": "More Details"
+    },
+    "empty_catalog": "Coming soon: new courses in this category..."
+  },
+  "chat": {
+    "welcome": "Hello! I am your virtual mentor. How can I help you today in the lesson?",
+    "status": "Available for your questions",
+    "placeholder": "Ask me something...",
+    "you": "Me",
+    "mentor": "AI MENTOR",
+    "bot_response_mock": "Excellent question! In modern AI, the concept you asked about refers to..."
+  },
+  "languages": {
+    "he": "עברית",
+    "en": "English"
+  },
+  "auth": {
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "email": "Email Address",
+    "password": "Password",
+    "full_name": "Full Name",
+    "submit_sign_in": "Sign In to Account",
+    "submit_sign_up": "Create Account",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "error_title": "Authentication Error",
+    "success_signup": "Account created! You can now sign in.",
+    "invalid_login": "Invalid email or password",
+    "password_hint": "Must be at least 6 characters"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save Changes",
+    "loading": "Loading..."
+  },
+  "admin": {
+    "console_title": "Admin Console",
+    "dashboard": "Dashboard",
+    "system_active": "System Active",
+    "back_to_system": "Back to System",
+    "menu": {
+      "courses": "Course Management",
+      "agents": "Manage Agents",
+      "users": "User Management"
+    },
+    "agents": {
+      "title": "Manage Agents 🤖",
+      "subtitle": "Manage AI tools and smart agents in the system.",
+      "add_new": "Add New Agent",
+      "edit_title": "Edit Agent",
+      "create_title": "Create New Agent",
+      "new_agent": "New Agent",
+      "form": {
+        "title": "Agent Title",
+        "description": "Agent Description",
+        "category": "Category",
+        "image": "Agent Image",
+        "link": "Tool Link (URL)",
+        "demo": "Demo Video (URL)",
+        "price": "Price (₪)",
+        "paid": "Paid Agent"
+      },
+      "table": {
+        "agent": "Agent",
+        "category": "Category",
+        "price": "Price",
+        "actions": "Actions"
+      }
+    },
+    "courses": {
+      "title": "Course Management 📚",
+      "subtitle": "Create, edit and manage your modular courses.",
+      "add_new": "Create New Course",
+      "add_new_agent": "Create New Agent",
+      "loading": "Loading courses...",
+      "delete_confirm": "Are you sure you want to delete this course?",
+      "delete_module_confirm": "Are you sure you want to delete this module and all its lessons?",
+      "delete_lesson_confirm": "Are you sure you want to delete this lesson?",
+      "delete_question_confirm": "Are you sure you want to delete this question?",
+      "edit_title": "Edit Course",
+      "create_title": "Create New Course",
+      "new_course": "New Course",
+      "wizard": {
+        "step1": "Settings & Details",
+        "step2": "Course Content",
+        "next": "Continue to Content",
+        "back": "Back to Settings",
+        "finish": "Finish & Save",
+        "content_title": "Build Course Content",
+        "content_subtitle": "Manage modules and lessons. Changes are saved automatically.",
+        "add_module": "Add Module",
+        "add_lesson": "Add Lesson",
+        "no_modules": "No modules yet. Click 'Add Module' to start.",
+        "lesson_details": "Lesson Details",
+        "edit_lesson_details": "Edit Lesson Details",
+        "lesson_edit_title": "Edit Lesson",
+        "lesson_tab_content": "Lesson Content",
+        "lesson_tab_quiz": "Lesson Quiz",
+        "lesson_type": "Lesson Type",
+        "lesson_video": "Video Lesson",
+        "lesson_text": "Text Lesson",
+        "lesson_quiz_enabled": "Enable Quiz for this Lesson",
+        "lesson_quiz_disabled_title": "Quiz for this lesson is disabled",
+        "lesson_quiz_disabled_subtitle": "You can enable the quiz to start building questions for the student at the end of the lesson.",
+        "lesson_quiz_activate": "Activate Quiz Now",
+        "lesson_quiz_disable": "Disable Quiz",
+        "lesson_quiz_builder_title": "Build Lesson Quiz",
+        "lesson_quiz_builder_subtitle": "Configure questions for the student to answer after the lesson.",
+        "save_lesson": "Save Lesson",
+        "lesson_quiz_requires_score": "Quiz with passing score required",
+        "lesson_quiz_min_score": "Minimum passing score (%)",
+        "lesson_quiz_min_score_hint": "The student will not be able to finish the lesson without passing this score",
+        "add_question": "Add Question",
+        "question": "Question",
+        "points": "Points",
+        "option": "Option",
+        "step3": "Admission Test",
+        "pretest_title": "Build Admission Test",
+        "pretest_subtitle": "Configure test questions and required passing score.",
+        "min_score": "Minimum Passing Score (%)"
+      },
+      "table": {
+        "course": "Course",
+        "visibility": "Visibility",
+        "modules": "Modules",
+        "price": "Price",
+        "actions": "Actions"
+      },
+      "form": {
+        "hebrew_content": "Course Content",
+        "english_content": "Content",
+        "title_he": "Course Title",
+        "title_en": "English Title",
+        "description_he": "Description",
+        "description_en": "English Description",
+        "modular_controls": "Extra Options",
+        "pre_test": "Admission Test",
+        "ai_mentor": "AI Mentor",
+        "certificate": "Certificate",
+        "paid": "Paid Course",
+        "price_ils": "Price (₪)",
+        "video_url": "Video Link",
+        "ai_mentor_url": "AI Mentor URL",
+        "external_tool_url": "Tool Link (URL)",
+        "demo_video_url": "Demo Video (URL)",
+        "category": "Category",
+        "category_course": "Full Course",
+        "category_home": "Home Agent",
+        "category_business": "Business Agent",
+        "content_he": "Lesson Content",
+        "content_en": "English Content"
+      },
+      "placeholders": {
+        "title_he": "e.g. Certified AI Expert",
+        "title_en": "e.g. Certified AI Expert",
+        "description_he": "Write a short description...",
+        "description_en": "Write a short description...",
+        "module_title_he": "Module Title",
+        "module_title_en": "Module Title",
+        "lesson_title_he": "Lesson Title",
+        "lesson_title_en": "Lesson Title",
+        "video_url": "Paste YouTube or Vimeo link",
+        "content_he": "Write lesson content here...",
+        "content_en": "Write lesson content here...",
+        "new_question_text": "Enter question here..."
+      }
+    },
+    "users": {
+      "title": "User Management 👥",
+      "subtitle": "View student progress and enrollment status.",
+      "search_placeholder": "Search by name or email...",
+      "loading": "Loading users...",
+      "anonymous": "Anonymous User",
+      "role_admin": "Admin",
+      "joined": "Joined",
+      "enrolled": "Enrolled",
+      "pending": "Pending",
+      "pre_test": "Pre-test",
+      "no_courses": "No courses enrolled"
+    }
+  }
+}

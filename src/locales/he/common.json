@@ -401,7 +401,8 @@
         "ai_mentor_url": "כתובת URL ל-AI Mentor",
         "payment_url": "קישור לדף סליקה",
         "external_tool_url": "קישור לכלי (URL)",
-        "demo_video_url": "סרטון הדגמה (URL)"
+        "demo_video_url": "סרטון הדגמה (URL)",
+        "rich_text_hint": "* בקרוב: עורך טקסט עשיר (Rich Text Editor) מלא"
       },
       "placeholders": {
         "title_he": "לדוגמה: מומחה AI מוסמך",

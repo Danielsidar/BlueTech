@@ -28,6 +28,7 @@ import { supabase } from './lib/supabase';
 import { useAuth } from './contexts/AuthContext';
 
 const VideoPlayer: React.FC<{ url: string }> = ({ url }) => {
+  const { t } = useTranslation();
   const getEmbedUrl = (url: string) => {
     if (!url) return null;
     

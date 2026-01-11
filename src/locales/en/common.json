@@ -401,7 +401,8 @@
         "ai_mentor_url": "AI Mentor URL",
         "payment_url": "Checkout Link",
         "external_tool_url": "Tool Link (URL)",
-        "demo_video_url": "Demo Video (URL)"
+        "demo_video_url": "Demo Video (URL)",
+        "rich_text_hint": "* Coming soon: Full Rich Text Editor"
       },
       "placeholders": {
         "title_he": "e.g. Certified AI Expert",

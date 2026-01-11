@@ -42,7 +42,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
                 product.language === 'he' ? 'bg-emerald-500/80 text-white' : 'bg-blue-500/80 text-white'
               }`}>
                 <Globe size={12} />
-                {product.language === 'he' ? 'עברית' : 'English'}
+                {product.language === 'he' ? t('languages.he') : t('languages.en')}
               </span>
               {isAgent && (
                 <span className="px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-purple-500/80 backdrop-blur-md text-white flex items-center gap-2">

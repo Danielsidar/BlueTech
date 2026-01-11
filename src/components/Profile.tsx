@@ -4,8 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabase';
 
 const Profile: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const _lng = i18n.language;
+  const { t } = useTranslation();
   const [profile, setProfile] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 

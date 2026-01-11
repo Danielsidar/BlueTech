@@ -214,7 +214,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
       order_index: modules.length
     };
 
-    const { data, error } = await supabase.from('modules').insert([newModule]).select().single();
+    const { data, error: _error } = await supabase.from('modules').insert([newModule]).select().single();
     if (data) {
       setModules([...modules, { ...data, lessons: [] }]);
     }
@@ -231,7 +231,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
       lesson_type: 'video'
     };
 
-    const { data, error } = await supabase.from('lessons').insert([newLesson]).select().single();
+    const { data, error: _error } = await supabase.from('lessons').insert([newLesson]).select().single();
     if (data) {
       setModules(modules.map(m => 
         m.id === moduleId ? { ...m, lessons: [...m.lessons, data] } : m
@@ -637,7 +637,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                   />
                                 </div>
                                 <div>
-                                  <label className="block text-[10px] font-black text-gray-400 uppercase mb-2">דף סליקה (Checkout URL)</label>
+                                  <label className="block text-[10px] font-black text-gray-400 uppercase mb-2">{t('admin.courses.form.payment_url')}</label>
                                   <input 
                                     type="url"
                                     className="w-full bg-white border-none rounded-xl px-4 py-3 font-medium focus:ring-2 focus:ring-primary/20 shadow-sm"
@@ -1529,7 +1529,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                   onChange={(e) => updateLessonData(lesson.id, { content: e.target.value })}
                                   placeholder={t('admin.courses.placeholders.content_he')}
                                 />
-                                <p className="text-xs text-gray-400 mt-2 font-medium">* בקרוב: עורך טקסט עשיר (Rich Text Editor) מלא</p>
+                                <p className="text-xs text-gray-400 mt-2 font-medium">{t('admin.courses.form.rich_text_hint', '* בקרוב: עורך טקסט עשיר (Rich Text Editor) מלא')}</p>
                               </div>
                             </div>
                           )}
@@ -1594,7 +1594,7 @@ const CourseManagement: React.FC<CourseManagementProps> = ({ isAgentsMode = fals
                                     onClick={async () => {
                                       const newQuiz = {
                                         lesson_id: lesson.id,
-                                        question_he: 'שאלה חדשה',
+                                        question_he: t('admin.courses.wizard.new_question_text', 'שאלה חדשה'),
                                         options_he: ['', '', '', ''],
                                         correct_answer_index: 0,
                                        order_index: currentQuizzes.length
